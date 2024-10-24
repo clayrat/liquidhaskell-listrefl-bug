@@ -1,0 +1,16 @@
+packages: ./
+
+source-repository-package
+    type: git
+    location: https://github.com/ucsd-progsys/liquidhaskell.git
+    tag: efc167432c2f7d830474052ade5b68ebd942ed6e
+    subdir: . liquidhaskell-boot liquid-prelude liquid-vector
+
+source-repository-package
+   type: git
+   location: https://github.com/ucsd-progsys/liquid-fixpoint.git
+   tag: d1acfdc45422759339853534cbcbd6955f402f18
+   subdir: .
+
+allow-newer: true
+with-compiler: ghc-9.10.1

@@ -1,0 +1,35 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           foo
+version:        0.1.0.0
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+flag liquidhaskell
+  description: Enable LiquidHaskell
+  manual: True
+  default: False
+
+library
+  exposed-modules:
+      Foo
+  other-modules:
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , containers
+    , hashable
+    , liquid-prelude
+    , liquidhaskell
+    , liquidhaskell-boot
+    , rest-rewrite
+    , unordered-containers
+  default-language: Haskell2010
+  if flag(liquidhaskell)
+    ghc-options: -fplugin=LiquidHaskell
